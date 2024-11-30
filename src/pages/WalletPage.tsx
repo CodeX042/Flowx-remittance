@@ -31,22 +31,6 @@ const RemittanceWalletPage = () => {
     setSupportedCurrencies(JSON.parse(response?.supportedCurrencies || "{}"));
   }, [response]);
 
-  //   africanFiat
-  // :
-  // (6) ['NGN', 'KES', 'ZAR', 'GHS', 'TZS', 'UGX']
-  // cryptocurrencies
-  // :
-  // (4) ['SUI', 'BTC', 'ETH', 'XRP']
-  // globalFiat
-  // :
-  // (3) ['USD', 'EUR', 'GBP']
-  // stablecoins
-  // :
-  // (5) ['USDT', 'USDC', 'DAI', 'BUSD', 'EUROC']
-  // [[Prototype]]
-  // :
-  // Object;
-
   return (
     <div className="min-h-screen text-white p-6">
       <div className="max-w-full mx-auto space-y-4">
@@ -112,7 +96,10 @@ const RemittanceWalletPage = () => {
           title="Swap Funds"
           onClose={handleCloseModal}
         >
-          <SwapFundsForm onClose={handleCloseModal} />
+          <SwapFundsForm
+            onClose={handleCloseModal}
+            currencies={supportedCurrencies}
+          />
         </Modal>
       </div>
     </div>
