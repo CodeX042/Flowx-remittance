@@ -1,13 +1,46 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(0, 191, 166, 0.1) 10%,
+      transparent 50%
+    ),
+    /* Subtle top-left glow */
+      radial-gradient(
+        circle at 85% 30%,
+        rgba(0, 77, 64, 0.2) 8%,
+        transparent 40%
+      ),
+    /* Subtle top-right glow */
+      radial-gradient(
+        circle at 50% 75%,
+        rgba(0, 191, 166, 0.15) 12%,
+        transparent 60%
+      ),
+    /* Subtle bottom-center glow */ linear-gradient(135deg, #0f0f0f, #0f0f0f); /* Base black background */
+  color: #ffffff;
+  height: 100vh;
+}
+
+header {
+  backdrop-filter: blur(10px); /* Add a subtle glass-like effect */
+}
+
+header input::placeholder {
+  color: #6b7280; /* Neutral gray placeholder color */
+}
+
+header button {
+  transition: color 0.2s ease;
 }
